@@ -1,2 +1,36 @@
-<h1>Jobs#index</h1>
-<p>Find me in app/views/jobs/index.html.erb</p>
+
+<h1>This is the Index jobs page </h1>
+<div class="container">
+<table class="table table-hover">
+  <tr>
+    <th>Description</th>
+    <th>Location</th>
+    <th>Cost</th>
+    <th>Time</th>
+    <th>User</th>
+  </tr>
+<% @jobs.each do |job| %>
+  <tr>
+    <td><%=job.description%></td>
+    <td><%=job.location%></td>
+    <td><%=job.cost%></td>
+    <td><%=job.time%></td>
+    <td><%=job.user.first_name%></td>
+  </tr>
+<% end  %>
+</table>
+</div>
+
+
+
+
+
+<!--
+    t.text "description"
+    t.string "location"
+    t.float "cost"
+    t.integer "time"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false -->
+
