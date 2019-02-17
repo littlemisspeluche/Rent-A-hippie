@@ -1,0 +1,12 @@
+<%= simple_form_for [@job] do |job| %>
+  <%= job.error_notification %>
+  <%= job.input :description, label: "Job Description" %>
+  <%= job.input :location, label: "Job address" %>
+  <%= job.input :cost, label: "Job cost" %>
+  <%= job.input :time, label: "Time to complete the job" %>
+  <%= job.button :submit %>
+<% end %>
+
+
+
+
