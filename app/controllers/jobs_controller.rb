@@ -6,9 +6,11 @@ class JobsController < ApplicationController
   end
 
   def create
+
   end
 
   def new
+    # here will be a method for a new job
   end
 
   def edit
