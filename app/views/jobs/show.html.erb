@@ -4,9 +4,7 @@
 	<div class="row">
 		<div class="sm-col-12">
 			<ul>
-        <% if @job.nil? %>
-        <h1>Sorry, This job is empty</h1>
-        <% else %>
+
 				<li><%=  @job.description%></li>
 				<li><%= @job.location %></li>
 				<li><%= @job.cost %></li>
