@@ -1,19 +1,22 @@
 class JobsController < ApplicationController
   def index
-    @jobs = Job.all
+    @jobs = policy_scope(Job)
   end
 
   def show
     @job = Job.find(params[:id])
+    authorize @job
   end
 
   def new
     @job = Job.new
+    authorize @job
   end
 
   def create
     @job = Job.new(job_params)
     @job.user = current_user
+    authorize @job
     if @job.save
       redirect_to job_path(@job)
     else
@@ -23,17 +26,20 @@ class JobsController < ApplicationController
 
   def destroy
     @job = Job.find(params[:id])
+    authorize @job
     @job.destroy
     redirect_to jobs_path
+
   end
 
   def edit
-
    @job = Job.find(params[:id])
+   authorize @job
   end
 
   def update
   @job = Job.find(params[:id])
+  authorize @job
   @job.update(job_params)
   redirect_to job_path(@job)
   end
