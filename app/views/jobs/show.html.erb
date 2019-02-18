@@ -1,3 +1,4 @@
+
 <div class="white-background">
   <div class="row">
   <p class="title">Jobs#show</p>
@@ -26,10 +27,15 @@
   </div>
 </div>
 
-
-<h1><%= link_to "Delete Job", job_path(), :method =>:delete%></h1>
-<h1><%= link_to "Edit Job", edit_job_path(params[:id])%></h1>	
-<%= link_to "Book this job", new_job_booking_path(@job) %>
+<% if policy(@job).destroy? %>
+      <h1><%= link_to "Delete Job", job_path(), :method =>:delete%></h1>
+       <% end  %>
+          <% if policy(@job).edit? %>
+      <h1><%= link_to "Edit Job", edit_job_path(params[:id])%></h1>
+		  <% end %>
+<% if policy(@job).showing? %>
+  <%= link_to "Book this job", new_job_booking_path(@job) %>
+  <% end  %>
 
 
 

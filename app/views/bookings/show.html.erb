@@ -1,2 +1,11 @@
 <h1>Bookings#show</h1>
 <p>Find me in app/views/bookings/show.html.erb</p>
+<ul>
+<% if @booking.status != "0" %>
+  <li>Status: <%= @booking.status  %></li>
+<% end %>
+<li>email:  <%= @booking.user.email %></li>
+<li>booking id:  <%= @booking.id %></li>
+<li>job id:  <%= @booking.job.id %></li>
+
+</ul>

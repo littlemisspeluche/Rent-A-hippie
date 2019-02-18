@@ -17,6 +17,8 @@ gem 'uglifier'
 gem 'webpacker'
 ####for authentication#####
 gem 'devise'
+####PUNDIT#####
+gem "pundit"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
