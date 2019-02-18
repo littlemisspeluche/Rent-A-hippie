@@ -32,3 +32,5 @@ class JobsController < ApplicationController
     params.require(:job).permit(:description, :location, :cost, :time)
   end
 end
+
+
