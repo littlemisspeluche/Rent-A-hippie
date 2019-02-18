@@ -7,11 +7,25 @@ def show
   
 end
 
-def new
-end
+  def new
+    @job = Job.find(params[:job_id])
+    @booking = Booking.new
 
-def create
-end
+  end
+
+  def create
+    @job = Job.find(params[:job_id])
+    @booking = Booking.new(booking_params)
+    @booking.job = @job
+    @booking.user = current_user
+
+    if @booking.save
+      redirect_to booking_path(@booking)
+    else
+      render :new
+    end
+  end
+
 
 def edit
   @booking = Booking.find(params[:id]) 
@@ -26,9 +40,17 @@ def update
   end
 end
 
-def destroy
+
+
+  def destroy
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:status, :user_id, :job_id)
+  end
 end
-def booking_params
-    params.require(:booking).permit(:status)
-end
-end 
+
+
+
