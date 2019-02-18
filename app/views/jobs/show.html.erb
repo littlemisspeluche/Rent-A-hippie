@@ -1,24 +1,42 @@
-<h1>Jobs#show</h1>
-<p>Find me in app/views/jobs/show.html.erb</p>
-<div class="contniner">
-	<div class="row">
-		<div class="sm-col-12">
-			<ul>
-				<li><%=  @job.description%></li>
-				<li><%= @job.location %></li>
-				<li><%= @job.cost %></li>
-				<li><%= @job.time %></li>
-			</ul>
-          <% if policy(@job).destroy? %>
+
+<div class="white-background">
+  <div class="row">
+  <p class="title">Jobs#show</p>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+    	<ul class="list-description">
+    		<li>THE TASK :
+          <br>
+          <%=  @job.description%>
+          </li>
+    		<li><i class="fas fa-map-marker-alt"></i>
+          <br>
+          <%= @job.location %></li>
+    		<li><i class="fas fa-money-check-alt"></i>
+          <br>
+          <%= @job.cost %></li>
+        <li><i class="far fa-clock"></i>
+          <br>
+          <%= @job.time %></li>
+    	</ul>
+    </div>
+    <div class="col-xs-12 col-sm-6 map">
+      <%= image_tag("mapshot.png", :alt => "map screen shoot") %>
+    </div>
+  </div>
+</div>
+
+<% if policy(@job).destroy? %>
       <h1><%= link_to "Delete Job", job_path(), :method =>:delete%></h1>
        <% end  %>
           <% if policy(@job).edit? %>
       <h1><%= link_to "Edit Job", edit_job_path(params[:id])%></h1>
 		  <% end %>
-    </div>
-	</div>
-  <% if policy(@job).showing? %>
+<% if policy(@job).showing? %>
   <%= link_to "Book this job", new_job_booking_path(@job) %>
   <% end  %>
 
-</div>
+
+
+
