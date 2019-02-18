@@ -17,7 +17,8 @@
 		  <% end %>
     </div>
 	</div>
+  <% if policy(@job).showing? %>
   <%= link_to "Book this job", new_job_booking_path(@job) %>
-
+  <% end  %>
 
 </div>

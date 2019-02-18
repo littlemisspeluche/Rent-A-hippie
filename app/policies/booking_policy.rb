@@ -1,9 +1,10 @@
-class JobPolicy < ApplicationPolicy
+class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
   end
+
 
   def new?
   true
@@ -18,20 +19,16 @@ class JobPolicy < ApplicationPolicy
   end
 
   def edit?
-  record.user == user
+  record.user == user || record.job.user == user
+
   end
 
   def update?
-  record.user == user
+  record.user == user || record.job.user == user
   end
 
   def destroy?
   record.user == user
   end
-
-  def showing?
-    record.user != user
-  end
-
 
 end

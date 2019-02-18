@@ -1,8 +1,9 @@
 
 <%= simple_form_for [@job, @booking] do |book| %>
   <%= book.error_notification %>
-
+  <% if policy(@booking).new? %>
   <%= book.input :status, label: "Booking Status" %>
+  <% end %>
   <%= book.button :submit %>
 <% end %>
 
