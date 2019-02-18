@@ -1,9 +1,11 @@
 class BookingsController < ApplicationController
-  def index
-  end
+def index
+  @bookings = Booking.all
+end
 
-  def show
-  end
+def show
+  
+end
 
   def new
     @job = Job.find(params[:job_id])
@@ -24,11 +26,20 @@ class BookingsController < ApplicationController
     end
   end
 
-  def update
-  end
 
-  def edit
+def edit
+  @booking = Booking.find(params[:id]) 
+end
+
+def update
+  @booking = Booking.find(params[:id]) 
+  if @booking.update(booking_params)
+      redirect_to bookings_path(@booking)
+    else
+      puts "hello"
   end
+end
+
 
 
   def destroy
@@ -40,5 +51,6 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:status, :user_id, :job_id)
   end
 end
+
 
 
