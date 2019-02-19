@@ -2,6 +2,7 @@
 <div class="title">
 <h1>The jobs of my boys</h1>
 </div>
+
 <% @jobs.each do |job| %>
   
  <div class="center">
@@ -39,7 +40,7 @@
  </div>
 
 
-
 <% end  %>
 <%= link_to "Sign Out", destroy_user_session_path, :method =>:delete %>
+<%= link_to "Add Job", new_job_path %>
 
