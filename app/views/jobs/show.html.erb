@@ -1,39 +1,48 @@
 <div class="purple-background">
   <div class="row">
-  <p class="title">Task Description</p>
+    <p class="title">Task Description</p>
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-6">
       <ul class="list-description">
-        <li> I`m searching for someone who can ...</li>
-          <div class="list-info"><%=  @job.description %></div>
-        <li>Im in...</li>
-          <div class="list-info"><%= @job.location %><i class="fas fa-map-marker-alt"></i></div>
-        <li>I'm willing to pay... </li>
-          <div class="list-info"><%= @job.cost %> <i class="fas fa-money-check-alt"></i></div>
-        <li>In the next...</li>
-          <div class="list-info"><%= @job.time %> min <i class="far fa-clock"></i></div>
+        <div class="list-info">
+          <li> I`m searching for someone who can ...</li>
+          <%=  @job.description %>
+        </div>
+        <div class="list-info">
+          <li>Im in...</li>
+          <%= @job.location %><i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="list-info">
+          <li>I'm willing to pay... </li>
+          <%= @job.cost %> <i class="fas fa-money-check-alt"></i>
+        </div>
+        <div class="list-info">
+          <li>In the next...</li>
+          <%= @job.time %> min <i class="far fa-clock"></i>
+        </div>
       </ul>
+
       <% if policy(@job).showing? %>
-      <button class="btn-pink">
+      <button class="btn-orange">
         <%= link_to "Book this job", job_bookings_path(@job), :method => :post %>
         <% end  %>
       </button>
     </div>
     <div class="col-xs-12 col-sm-6 map">
       <%= image_tag("mapshot.png", :alt => "map screen shoot") %>
-      <div class="links">
-
-        <ul>
-          <li> <% if policy(@job).destroy? %>
-          <%= link_to "Delete Job", job_path(), :method =>:delete%>
-          <% end  %> </li>
-          <li><% if policy(@job).edit? %>
-            <%= link_to "Edit Job", edit_job_path(params[:id])%>
-              <% end %></li>
-        </ul>
-      </div>
+    <div class="links">
+      <ul>
+        <li class="btn-orange"><%= link_to "Back", jobs_path %></li>
+        <li class="btn-orange"><% if policy(@job).edit? %>
+          <%= link_to "Edit Job", edit_job_path(params[:id])%>
+          <% end %></li>
+        <li class="btn-orange"> <% if policy(@job).destroy? %>
+        <%= link_to "Delete Job", job_path(), :method =>:delete%>
+        <% end  %> </li>
+      </ul>
     </div>
   </div>
+</div>
 </div>
 
