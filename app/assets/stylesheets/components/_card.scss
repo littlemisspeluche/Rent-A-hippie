@@ -1,0 +1,56 @@
+.title h1{
+  color: azure;
+	padding-right: 120px;
+	margin: auto;
+	width:50%
+}
+.center{
+	margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+.card-jobs {
+width: 400px;
+height: 180px;
+overflow: hidden;
+opacity: 0.7;
+transition: 0.5s;
+box-shadow: 3px 3px azure;
+}
+.card-jobs:hover{
+	opacity: 0.9;
+	width: 420px;
+}
+
+.card-jobs-details {
+	display:flex;
+	justify-content: space-between;
+	
+}
+.card-jobs-description{
+	margin-top: 51px;
+}
+
+.card-jobs h2 {
+font-size: 16px;
+font-weight: bold;
+margin: 0;
+margin-top: 3px;
+}
+
+.card-jobs-details p {
+font-size: 12px;
+opacity: .7;
+margin: 0;
+margin-top: 10px;
+}
+
+
+
+
+.card-jobs-infos .card-jobs-user {
+
+bottom: 90px;
+
+width: 40px;
+}
