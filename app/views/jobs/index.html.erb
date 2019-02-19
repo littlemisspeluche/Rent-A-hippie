@@ -1,33 +1,45 @@
 
-<h1>Jobs#index</h1>
-<p>Find me in app/views/jobs/index.html.erb</p>
-
-
-<h1>This is the Index jobs page </h1>
-<div class="container">
-<table class="table table-hover">
-  <tr>
-    <th>Description</th>
-    <th>Location</th>
-    <th>Cost</th>
-    <th>Time</th>
-    <th>User</th>
-  </tr>
-<% @job.each do |job| %>
-  <tr>
-    <td><%=link_to  job.description, job_path(job.id)%></td>
-    <td><%=job.location%></td>
-    <td><%=job.cost%></td>
-    <td><%=job.time%></td>
-    <td><%=job.user.first_name%></td>
-  </tr>
-<% end  %>
-</table>
+<div class="title">
+<h1>The jobs of my boys</h1>
 </div>
+<% @jobs.each do |job| %>
+  
+ <div class="center">
+  <div class="card-jobs">
+    <div class="card-jobs-details">
+      <div class="card-jobs-detail">
+      <h2>Name</h2>
+        <p> <%=job.user.first_name%></p>
+     </div>
+       <div class="card-jobs-detail">
+        <h2>Location</h2>
+        <p><%=job.location%></p>
+        </div>
+         <div class="card-jobs-detail">
+          <h2>Cost</h2>
+          <p> <%=job.cost%></p>
+         </div>
+           <div class="card-jobs-detail">
+            <h2>Time</h2>
+            <p><%=job.time%></p>
+            </div>
+             <div class="card-jobs-infos   card-jobs-detail">
+               <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-jobs-user avatar-bordered"/>
+
+             </div>
+       </div>
+
+         <div class="card-jobs-description">
+         <h2>Description</h2>
+         <p><%=link_to  job.description, job_path(job.id)%></p>
+           
+    
+        </div>
+ </div>
+ </div>
+
+
+
+<% end  %>
 <%= link_to "Sign Out", destroy_user_session_path, :method =>:delete %>
-
-
-
-
-
 
