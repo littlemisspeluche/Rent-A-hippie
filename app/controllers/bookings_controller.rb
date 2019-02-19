@@ -13,16 +13,18 @@ end
     @job = Job.find(params[:job_id])
     @booking = Booking.new
     authorize @booking
-
   end
 
   def create
+
     @job = Job.find(params[:job_id])
-    @booking = Booking.new(booking_params)
-    @booking.job = @job
-    @booking.user = current_user
+    @booking = Booking.new(user_id: current_user.id, job_id: params[:job_id])
+    # @booking = Booking.new(booking_params)
+    # @booking.job = @job
+    # @booking.user = current_user
     authorize @booking
-    if @booking.save
+    @job.booked = true
+    if @booking.save && @job.save
       redirect_to booking_path(@booking)
     else
       render :new
@@ -36,15 +38,14 @@ def edit
 end
 
 def update
+  job = Booking.find(params[:id])
   @booking = Booking.find(params[:id])
-
   authorize @booking
   @booking.status == "0" ? @booking.status = "Pending" : @booking.status = "Approved"
-  @booking.save
-  if @booking.update(booking_params)
-      redirect_to booking_path(@booking)
-    else
-      puts "hello"
+  if @booking.update(user_id: current_user.id, job_id: job.job_id) && @booking.save
+    redirect_to booking_path(@booking)
+  else
+    render :new
   end
 end
 
