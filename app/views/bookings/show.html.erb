@@ -14,10 +14,13 @@
       <li>Email: <%= @booking.job.user.email %></li>
       <li>Job id: <%= @booking.job.id %></li>
     </ul>
-    <p style="font-size: 16; color: #E3D888">Please click below to confirm </p>
+
+     <% if policy(@booking).confirmed? %>
+     <p style="font-size: 16; color: #E3D888">Please click below to confirm </p>
     <button class="btn-blue">
         <%= link_to "Has Arrived!", booking_path(@booking), method: :patch %>
     </button>
+    <% end %>
     <p><%= link_to "SEE ALL OPEN JOBS", jobs_path %></p>
   </div>
 </div>
