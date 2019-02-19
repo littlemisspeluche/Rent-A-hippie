@@ -13,9 +13,9 @@
     <th>Time</th>
     <th>User</th>
   </tr>
-<% @jobs.each do |job| %>
+<% @job.each do |job| %>
   <tr>
-    <td><%=job.description%></td>
+    <td><%=link_to  job.description, job_path(job.id)%></td>
     <td><%=job.location%></td>
     <td><%=job.cost%></td>
     <td><%=job.time%></td>
