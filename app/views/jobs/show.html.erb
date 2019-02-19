@@ -1,23 +1,22 @@
-
 <div class="purple-background">
   <div class="row">
   <p class="title">Task Description</p>
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-6">
-    	<ul class="list-description">
-    		<li> I`m searching for someone who can ...</li>
+      <ul class="list-description">
+        <li> I`m searching for someone who can ...</li>
           <div class="list-info"><%=  @job.description %></div>
-    		<li>Im in...</li>
+        <li>Im in...</li>
           <div class="list-info"><%= @job.location %><i class="fas fa-map-marker-alt"></i></div>
-    		<li>I'm willing to pay... </li>
+        <li>I'm willing to pay... </li>
           <div class="list-info"><%= @job.cost %> <i class="fas fa-money-check-alt"></i></div>
         <li>In the next...</li>
           <div class="list-info"><%= @job.time %> min <i class="far fa-clock"></i></div>
-    	</ul>
+      </ul>
       <% if policy(@job).showing? %>
       <button class="btn-pink">
-        <%= link_to "Book this job", new_job_booking_path(@job) %>
+        <%= link_to "Book this job", job_bookings_path(@job), :method => :post %>
         <% end  %>
       </button>
     </div>

@@ -7,6 +7,13 @@
   // height: 550px;
 }
 
+.title {
+font-size: 30px;
+text-align: center;
+font-family: 'PT Sans', sans-serif;
+  color: #FFE3DC;
+}
+
 .list-description {
   list-style: none;
   font-family: 'PT Sans Caption', sans-serif;
@@ -16,39 +23,27 @@
 }
 
 .list-description li {
-  font-size: 14px;
+  font-size: 16px;
   color: #FFE3DC;
 }
-.map img {
-  width: 100%;
-  padding-top: 20px;
-}
-
-
-.title {
-font-size: 30px;
-text-align: center;
-font-family: 'PT Sans', sans-serif;
-  color: #FFE3DC;
-}
-
 
 .links {
   display: inline-block;
   color: #fff;
   font-size: 14px;
 }
-.list-info {
-    background: #4C4949;
-    border-radius: 2px;
-    color: #fff;
-    list-style: none;
-    position: relative;
-    padding-left: 10px;
-}
 
 .links ul {
   list-style: none;
+}
+
+.list-info {
+  background: #4C4949;
+  border-radius: 2px;
+  color: #fff;
+  list-style: none;
+  position: relative;
+  padding-left: 10px;
 }
 
 .list-info i {
@@ -57,26 +52,7 @@ font-family: 'PT Sans', sans-serif;
   top: 6px;
 }
 
-
-
-.btn-pink {
-  background-color: #C66798;
-  padding: 10px 15px;
-  border: 1px solid white;
-  border-radius: 4px;
-  margin: 0 0 10px 0;
-  transition: 0.4s;
-  margin-left: 25%;
-
-}
-
-.btn-pink:hover {
-  color: black;
-  background-color: white;
-}
-
-.btn-pink a {
-  text-decoration: none;
-  color: black;
-
+.map img {
+  width: 100%;
+  padding-top: 20px;
 }
