@@ -1,25 +1,17 @@
-<div class="purple-background">
-  <div class="row">
-    <p class="title">You Booked The Job</p>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-    <ul class="list-description">
-      <% if @booking.status != "0" %>
-      <li>STATUS: <%= @booking.status %></li>
-      <% end %>
-      <li>Hippie Name: <%= @booking.user.first_name %></li>
-      <li>Email: <%= @booking.user.email %></li>
-      <li>Partyboy Name: <%= @booking.job.user.first_name %></li>
-      <li>Email: <%= @booking.job.user.email %></li>
-      <li>Job id: <%= @booking.job.id %></li>
-    </ul>
-    <p style="font-size: 16; color: #E3D888">Please click below to confirm </p>
-     <button class="btn-blue">
-        <%= link_to "Has Arrived!", booking_path(@booking), method: :patch %>
-      </button>
+<h1>Bookings#show</h1>
+<p>Find me in app/views/bookings/show.html.erb</p>
+<ul>
+<% if @booking.status != "0" %>
+  <li>Status: <%= @booking.status  %></li>
+<% end %>
+<li>Hippie:  <%= @booking.user.email %></li>
+<li>Partyboy:  <%= @booking.job.user.email %></li>
+<li>job id:  <%= @booking.job.id %></li>
 
-    <p><%= link_to "SEE ALL OPEN JOBS", jobs_path %></p>
-  </div>
-</div>
-</div>
+</ul>
+
+<h1>Please click below to confirm </h1>
+<h2><%= link_to "Has Arrived!", booking_path(@booking), method: :patch %></h2>
+
+
+<p><%= link_to "Home", jobs_path %></p>
