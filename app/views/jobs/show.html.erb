@@ -1,41 +1,42 @@
 
-<div class="white-background">
+<div class="purple-background">
   <div class="row">
-  <p class="title">Jobs#show</p>
+  <p class="title">Task Description</p>
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-6">
     	<ul class="list-description">
-    		<li>THE TASK :
-          <br>
-          <%=  @job.description%>
-          </li>
-    		<li><i class="fas fa-map-marker-alt"></i>
-          <br>
-          <%= @job.location %></li>
-    		<li><i class="fas fa-money-check-alt"></i>
-          <br>
-          <%= @job.cost %></li>
-        <li><i class="far fa-clock"></i>
-          <br>
-          <%= @job.time %></li>
+    		<li> I`m searching for someone who can ...</li>
+          <div class="list-info"><%=  @job.description %></div>
+    		<li>Im in...</li>
+          <div class="list-info"><%= @job.location %><i class="fas fa-map-marker-alt"></i></div>
+    		<li>I'm willing to pay... </li>
+          <div class="list-info"><%= @job.cost %> <i class="fas fa-money-check-alt"></i></div>
+        <li>In the next...</li>
+          <div class="list-info"><%= @job.time %> min <i class="far fa-clock"></i></div>
     	</ul>
+      <% if policy(@job).showing? %>
+      <button class="btn-pink">
+        <%= link_to "Book this job", new_job_booking_path(@job) %>
+        <% end  %>
+      </button>
     </div>
     <div class="col-xs-12 col-sm-6 map">
       <%= image_tag("mapshot.png", :alt => "map screen shoot") %>
+      <div class="links">
+
+        <ul>
+          <li> <% if policy(@job).destroy? %>
+          <%= link_to "Delete Job", job_path(), :method =>:delete%>
+          <% end  %> </li>
+          <li><% if policy(@job).edit? %>
+            <%= link_to "Edit Job", edit_job_path(params[:id])%>
+              <% end %></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
-
-<% if policy(@job).destroy? %>
-      <h1><%= link_to "Delete Job", job_path(), :method =>:delete%></h1>
-       <% end  %>
-          <% if policy(@job).edit? %>
-      <h1><%= link_to "Edit Job", edit_job_path(params[:id])%></h1>
-		  <% end %>
-<% if policy(@job).showing? %>
-  <%= link_to "Book this job", new_job_booking_path(@job) %>
-  <% end  %>
 
 
 
