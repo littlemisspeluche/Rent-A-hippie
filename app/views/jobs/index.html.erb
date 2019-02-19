@@ -3,8 +3,8 @@
 <h1>The jobs of my boys</h1>
 </div>
 
-<% @jobs.each do |job| %>
-  
+<% @job.each do |job| %>
+
  <div class="center">
   <div class="card-jobs">
     <div class="card-jobs-details">
@@ -33,8 +33,8 @@
          <div class="card-jobs-description">
          <h2>Description</h2>
          <p><%=link_to  job.description, job_path(job.id)%></p>
-           
-    
+
+
         </div>
  </div>
  </div>

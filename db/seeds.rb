@@ -28,11 +28,11 @@ job7 = Job.create!(description: "Fill my bottle with water", user_id: user2.id, 
 
 
 puts "I'm creating some booking"
-booking1 = Booking.create!(status:"Pending", user_id: user1.id, job_id: job1.id)
-booking3 = Booking.create!(status:"Cancel", user_id: user3.id, job_id: job3.id)
+booking1 = Booking.create!( user_id: user1.id, job_id: job1.id)
+booking3 = Booking.create!(user_id: user3.id, job_id: job3.id)
 
-booking2 = Booking.create!(status:"Approved", user_id: user2.id, job_id: job2.id)
-booking4 = Booking.create!(status:"Approved", user_id: user2.id, job_id: job4.id)
-booking5 = Booking.create!(status:"Approved", user_id: user2.id, job_id: job5.id)
-booking6 = Booking.create!(status:"Approved", user_id: user2.id, job_id: job6.id)
-booking7 = Booking.create!(status:"Approved", user_id: user2.id, job_id: job7.id)
+booking2 = Booking.create!(user_id: user2.id, job_id: job2.id)
+booking4 = Booking.create!( user_id: user2.id, job_id: job4.id)
+booking5 = Booking.create!( user_id: user2.id, job_id: job5.id)
+booking6 = Booking.create!( user_id: user2.id, job_id: job6.id)
+booking7 = Booking.create!( user_id: user2.id, job_id: job7.id)
