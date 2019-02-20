@@ -13,10 +13,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-
-    
-
-    <nav class="navbar-fixed-top">
+    <!-- <nav class="navbar-fixed-top">
       <img src="../../assets/images/peace-solid.svg" alt="Hippie-Logo" class="logo">
       <ul class="main-nav js--man-nav">
         <li><a href="#">How it works</a></li>
@@ -24,7 +21,8 @@
         <li><a href="#">Sign up</a></li>
       </ul>
     </nav>
-
+ -->
+  <%= render 'pages/navbar2' %>
     <%= render 'pages/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
