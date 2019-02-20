@@ -59,6 +59,12 @@ def update
   end
 end
 
+  def mybookings
+
+    @bookings = Booking.where(user_id: current_user.id)
+    authorize @bookings
+  end
+
 
 
   def destroy

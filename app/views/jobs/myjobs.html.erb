@@ -1,0 +1,8 @@
+<h1>THIS IS MY JOBS PAGE</h1>
+<% @jobs.each do |job| %>
+<li>Description: <%= job.description %></li>
+<li>Location:  <%= job.location %></li>
+<li>Time: <%= job.time %></li>
+<li>Cost: <%= job.cost %></li>
+<% end  %>
+

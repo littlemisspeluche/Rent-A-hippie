@@ -45,6 +45,11 @@ class JobsController < ApplicationController
   redirect_to job_path(@job)
   end
 
+  def myjobs
+  @jobs = Job.where(user_id: current_user.id)
+  authorize @jobs
+  end
+
   private
 
   def job_params
