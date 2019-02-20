@@ -1,1 +1,42 @@
-// Specific CSS for your home-page
+.background-img {
+  background-size: cover;
+  height: 100vh;
+  color: #eee;
+  text-align: center;
+  padding-top: 40vh;
+  background-position: center;
+}
+
+.card-location {
+  width:80%;
+  height: 250px;
+  background-position: center;
+  border-radius: 3px;
+  text-align: center;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding: 17px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-location h3 {
+  color: #fff;
+  margin-top: 23%;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 18px;
+
+}
+h2 {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bolder;
+  color: #F8C600;
+  letter-spacing: 2px;
+  font-family: 'PT Sans Caption', sans-serif;
+  margin: 50px 0 45px 0;
+
+}
