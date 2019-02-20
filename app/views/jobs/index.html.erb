@@ -1,45 +1,49 @@
 
-<div class="title">
-<h1>The jobs of my boys</h1>
+<div class="row">
+ <div class="col-lg-offset-2 col-lg-6 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12"">
+  <div class="title">
+    <h1>The jobs of my boys</h1>
+   </div>
+  </div>
 </div>
+
 <% @jobs.each do |job| %>
-  
- <div class="center">
-  <div class="card-jobs">
+    <div class="row">
+    <div class="col-lg-offset-2 col-lg-6 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12"">
+   
+  <div class="card-jobs ">
     <div class="card-jobs-details">
-      <div class="card-jobs-detail">
-      <h2>Name</h2>
-        <p> <%=job.user.first_name%></p>
-     </div>
        <div class="card-jobs-detail">
         <h2>Location</h2>
         <p><%=job.location%></p>
         </div>
          <div class="card-jobs-detail">
           <h2>Cost</h2>
-          <p> <%=job.cost%></p>
+          <p><%=job.cost%></p>
          </div>
            <div class="card-jobs-detail">
             <h2>Time</h2>
             <p><%=job.time%></p>
             </div>
-             <div class="card-jobs-infos   card-jobs-detail">
+             <div class="card-jobs-infos">
                <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-jobs-user avatar-bordered"/>
-
+                 <p id="image-name" ><%=job.user.first_name%></p>
              </div>
+              
+     
        </div>
-
          <div class="card-jobs-description">
          <h2>Description</h2>
          <p><%=link_to  job.description, job_path(job.id)%></p>
-           
+     </div>
+       </div>
     
         </div>
- </div>
  </div>
 
 
 
 <% end  %>
 <%= link_to "Sign Out", destroy_user_session_path, :method =>:delete %>
+
 

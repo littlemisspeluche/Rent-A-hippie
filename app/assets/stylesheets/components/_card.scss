@@ -1,38 +1,36 @@
 
 .title h1{
   	color: #FFE3DC;
-	padding-right: 120px;
+	
 	margin: auto;
-	width:50%;
 	font-size: 30px;
 
 }
-.center{
-	margin: auto;
-  width: 50%;
-  padding: 10px;
-}
+
 .card-jobs {
-width: 400px;
+padding : 10px;
+margin : 10px;
 height: 180px;
 overflow: hidden;
 opacity: 0.7;
 transition: 0.5s;
 box-shadow: 3px 3px azure;
 background: #1A1D1A;
-}
-.card-jobs:hover{
-	opacity: 0.9;
-	width: 420px;
+
 }
 
 .card-jobs-details {
 	display:flex;
-	justify-content: space-between;
+	justify-content:space-between;
+  
+ 
+  
 	
 }
 .card-jobs-description{
-	margin-top: 51px;
+	margin-top: 30px;
+  
+
 }
 
 .card-jobs h2 {
@@ -41,17 +39,23 @@ font-weight: bold;
 margin: 0;
 margin-top: 3px;
 color: #FFE3DC;
+
 }
 
 .card-jobs-details p {
 font-size: 12px;
 font-weight: bold;
 opacity: .7;
-margin: 0;
+margin:0;
 margin-top: 10px;
 color: white;
+position: relative;
 }
-
+.card-jobs-description p{
+  font-size: 12px;
+  font-weight: bold;
+  
+}
 .card-jobs-description a{
 	color:white;
 	text-decoration: none;
@@ -68,9 +72,33 @@ color: white;
 }
 
 
-.card-jobs-infos .card-jobs-user {
-
+.card-jobs-infos .card-jobs-user{
 bottom: 90px;
+width: 70px;
+}
 
-width: 40px;
+img{
+   border-radius: 50%;
+}
+
+.card-jobs-infos{
+  position: absolute;
+  top: 70px;
+  right: 30px;
+  text-align:center;
+}
+
+#image-name {
+ left:-1px;
+}
+
+.card-jobs-detail{
+  width:80%;
+  padding-top: 15px;
+}
+.color-a{
+  background-color:blue;
+}
+.color-b{
+  background-color:red;
 }
