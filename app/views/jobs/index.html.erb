@@ -7,11 +7,14 @@
   </div>
 </div>
 
+<% if @job.length == 0 %>
+<h4>Sorry, no jobs at the moment!</h4>
+<% end  %>
 
 <% @job.each do |job| %>
     <div class="row">
     <div class="col-lg-offset-2 col-lg-6 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12"">
-   
+
   <div class="card-jobs ">
 
     <div class="card-jobs-details">
@@ -32,8 +35,8 @@
 
                  <p id="image-name" ><%=job.user.first_name%></p>
              </div>
-              
-     
+
+
        </div>
          <div class="card-jobs-description">
          <h2>Description</h2>

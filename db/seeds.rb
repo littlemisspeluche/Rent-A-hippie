@@ -2,6 +2,7 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
+
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
@@ -14,15 +15,23 @@ user2 = User.create!(first_name: "Liad", last_name: "Peiscic", email:"liad@gamil
 user3 = User.create!(first_name: "Orianne", last_name: "Gilaad", email:"ori@gamil.com", password:"567890", phone_number:"0523876063")
 
 puts "I'm creating some jobs"
-job1 = Job.create!(description: "Bring me a beer", user_id: user1.id, time: 10, cost: 10.00, location: "Tel-Aviv")
+job1 = Job.create!(description: "Bring me a beer", user_id: user1.id, time: 10, cost: 10.00, location: "Burning Man")
 
-job3 = Job.create!(description: "Find the location of the showers", user_id: user3.id, time: 30, cost: 5.50, location: "Idanha-a-Nova")
+job3 = Job.create!(description: "Find the location of the showers", user_id: user3.id, time: 30, cost: 5.50, location: "Ozora")
 
-job2 = Job.create!(description: "Stand in the line of the toilet for me", user_id: user2.id, time: 5, cost: 7.50, location: "Rio de Janeiro")
-job4 = Job.create!(description: "Bring me Dim-Sam", user_id: user2.id, time: 2, cost: 2.50, location: "Rio de Janeiro")
-job5 = Job.create!(description: "Bring me a Dealer", user_id: user2.id, time: 2, cost: 20, location: "Rio de Janeiro")
-job6 = Job.create!(description: "Bring me a beer", user_id: user2.id, time: 2, cost: 2.50, location: "Rio de Janeiro")
-job7 = Job.create!(description: "Fill my bottle with water", user_id: user2.id, time: 2, cost: 3.00, location: "Rio de Janeiro")
+job2 = Job.create!(description: "Stand in the line of the toilet for me", user_id: user2.id, time: 5, cost: 7.50, location: "Tomorrowland")
+job4 = Job.create!(description: "Bring me Dim-Sam", user_id: user2.id, time: 2, cost: 2.50, location: "Boom")
+job5 = Job.create!(description: "Bring me a Dealer", user_id: user2.id, time: 2, cost: 20, location: "Boom")
+job6 = Job.create!(description: "Bring me a beer", user_id: user2.id, time: 2, cost: 2.50, location: "Ozora")
+job7 = Job.create!(description: "Fill my bottle with water", user_id: user2.id, time: 2, cost: 3.00, location: "Burning Man")
+job8 = Job.create!(description: "Bring me a beer", user_id: user1.id, time: 10, cost: 10.00, location: "Burning Man")
+job9 = Job.create!(description: "Find the location of the showers", user_id: user3.id, time: 30, cost: 5.50, location: "Ozora")
+job10 = Job.create!(description: "Stand in the line of the toilet for me", user_id: user2.id, time: 5, cost: 7.50, location: "Tomorrowland")
+job11 = Job.create!(description: "Bring me Dim-Sam", user_id: user2.id, time: 2, cost: 2.50, location: "Boom")
+job12 = Job.create!(description: "Bring me a Dealer", user_id: user2.id, time: 2, cost: 20, location: "Boom")
+job13 = Job.create!(description: "Bring me a beer", user_id: user2.id, time: 2, cost: 2.50, location: "Ozora")
+job14 = Job.create!(description: "Fill my bottle with water", user_id: user2.id, time: 2, cost: 3.00, location: "Tomorrowland")
+
 
 
 

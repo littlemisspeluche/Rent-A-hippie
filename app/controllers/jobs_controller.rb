@@ -1,7 +1,8 @@
 class JobsController < ApplicationController
   def index
     @jobs = policy_scope(Job)
-    @job = Job.where("booked = false")
+    @job = @jobs.where("booked = false AND location = ? ", params["format"])
+
   end
 
   def show
@@ -27,9 +28,10 @@ class JobsController < ApplicationController
 
   def destroy
     @job = Job.find(params[:id])
+    location = @job.location
     authorize @job
     @job.destroy
-    redirect_to jobs_path
+    redirect_to jobs_path(location)
 
   end
 
