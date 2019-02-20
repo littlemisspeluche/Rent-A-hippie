@@ -1,34 +1,35 @@
 
-header{
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  // background-attachment: fixed;
+// header{
+//   height: 100vh;
+//   background-size: cover;
+//   background-position: center;
+//   // background-attachment: fixed;
 
-}
+// }
 
-.row {
-  max-width: 1140px;
-  margin: 0 auto;
-}
+// .row {
+//   max-width: 1140px;
+//   margin: 0 auto;
+// }
 
 
 .logo{
   height: 50px;
   width: auto;
   float: left;
-  margin: 0;
+  margin: 20px 20px;
 }
 
 .main-nav {
   float: right;
   list-style: none;
-  margin: 0;
+  margin: 10px 10px 10px 15px;
 }
 
 .main-nav li{
   display:inline-block;
   margin: 0;
+  padding: 0 10px;
 
 }
 .main-nav li a:link,
