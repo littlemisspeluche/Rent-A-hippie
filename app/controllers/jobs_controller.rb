@@ -28,9 +28,10 @@ class JobsController < ApplicationController
 
   def destroy
     @job = Job.find(params[:id])
+    location = @job.location
     authorize @job
     @job.destroy
-    redirect_to jobs_path
+    redirect_to jobs_path(location)
 
   end
 
