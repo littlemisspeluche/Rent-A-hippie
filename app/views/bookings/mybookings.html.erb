@@ -1,0 +1,13 @@
+<h1>This is the my Bookings page</h1>
+
+
+<% @bookings.each do |booking| %>
+<li>Booking ID:<%= booking.id %> </li>
+<li>Hippie: <%= booking.user.email %></li>
+<li>Partyboy: <%= booking.job.user.email %></li>
+<li>Description: <%= booking.job.description %> </li>
+<li>Location: <%= booking.job.location %></li>
+<li>Cost: <%= booking.job.cost %></li>
+<li>Time: <%= booking.job.time %></li>
+<% end  %>
+
