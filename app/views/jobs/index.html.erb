@@ -7,11 +7,13 @@
   </div>
 </div>
 
-<% @jobs.each do |job| %>
+
+<% @job.each do |job| %>
     <div class="row">
     <div class="col-lg-offset-2 col-lg-6 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12"">
    
   <div class="card-jobs ">
+
     <div class="card-jobs-details">
        <div class="card-jobs-detail">
         <h2>Location</h2>
@@ -27,6 +29,7 @@
             </div>
              <div class="card-jobs-infos">
                <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-jobs-user avatar-bordered"/>
+
                  <p id="image-name" ><%=job.user.first_name%></p>
              </div>
               
@@ -37,13 +40,8 @@
          <p><%=link_to  job.description, job_path(job.id)%></p>
      </div>
        </div>
-    
-        </div>
- </div>
-
-
-
 <% end  %>
 <%= link_to "Sign Out", destroy_user_session_path, :method =>:delete %>
+<%= link_to "Add Job", new_job_path %>
 
 

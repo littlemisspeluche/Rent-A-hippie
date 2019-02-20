@@ -31,4 +31,15 @@ class BookingPolicy < ApplicationPolicy
   record.user == user
   end
 
+  def mybookings?
+    true
+  end
+
+  def confirmed?
+    if record.status == "0"
+      true
+    elsif record.status == "pending"
+      user.confirmed == false
+    end
+  end
 end

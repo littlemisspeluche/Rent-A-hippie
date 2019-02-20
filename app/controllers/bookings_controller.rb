@@ -19,9 +19,6 @@ end
 
     @job = Job.find(params[:job_id])
     @booking = Booking.new(user_id: current_user.id, job_id: params[:job_id])
-    # @booking = Booking.new(booking_params)
-    # @booking.job = @job
-    # @booking.user = current_user
     authorize @booking
     @job.booked = true
     if @booking.save && @job.save
@@ -42,12 +39,28 @@ def update
   @booking = Booking.find(params[:id])
   authorize @booking
   @booking.status == "0" ? @booking.status = "Pending" : @booking.status = "Approved"
-  if @booking.update(user_id: current_user.id, job_id: job.job_id) && @booking.save
+   if @booking.status == "Approved"
+    current_user.confirmed = false
+    @booking.job.user.confirmed = false
+    @booking.user.confirmed = false
+    current_user.save
+    @booking.save
+    job.save
+  else
+  current_user.confirmed = true
+  end
+  if @booking.update(user_id: current_user.id, job_id: job.job_id) && @booking.save && current_user.save
     redirect_to booking_path(@booking)
   else
     render :new
   end
 end
+
+  def mybookings
+
+    @bookings = Booking.where(user_id: current_user.id)
+    authorize @bookings
+  end
 
 
 
