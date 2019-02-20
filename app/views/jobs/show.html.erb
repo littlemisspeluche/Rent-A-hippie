@@ -34,7 +34,7 @@
         <%= image_tag("mapshot.png", :alt => "map screen shoot") %>
       <div class="links">
         <ul>
-          <li class="btn-orange"><%= link_to "Back", jobs_path %></li>
+          <li class="btn-orange"><%= link_to "Back", jobs_path(@job.location) %></li>
           <% if policy(@job).edit? %>
           <li class="btn-orange">
             <%= link_to "Edit Job", edit_job_path(params[:id])%>
