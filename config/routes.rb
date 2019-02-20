@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/myjobs', to: 'jobs#myjobs'
   get '/mybookings', to: 'bookings#mybookings'
+  get '/jobs/#{?}', to: 'jobs#index'
   resources :jobs do
     resources :bookings, only: [:new, :create]
   end

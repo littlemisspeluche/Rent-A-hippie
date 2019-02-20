@@ -1,7 +1,8 @@
 class JobsController < ApplicationController
   def index
     @jobs = policy_scope(Job)
-    @job = Job.where("booked = false")
+    @job = @jobs.where("booked = false AND location = ? ", params["format"])
+
   end
 
   def show

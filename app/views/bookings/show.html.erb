@@ -21,7 +21,7 @@
         <%= link_to "Has Arrived!", booking_path(@booking), method: :patch %>
     </button>
     <% end %>
-    <p><%= link_to "SEE ALL OPEN JOBS", jobs_path %></p>
+    <p><%= link_to "SEE ALL OPEN JOBS", jobs_path(@booking.job.location) %></p>
   </div>
 </div>
 </div>
