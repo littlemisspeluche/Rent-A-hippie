@@ -33,5 +33,8 @@ class JobPolicy < ApplicationPolicy
     record.user != user
   end
 
+  def myjobs?
+    true
+  end
 
 end

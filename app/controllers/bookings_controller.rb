@@ -19,9 +19,6 @@ end
 
     @job = Job.find(params[:job_id])
     @booking = Booking.new(user_id: current_user.id, job_id: params[:job_id])
-    # @booking = Booking.new(booking_params)
-    # @booking.job = @job
-    # @booking.user = current_user
     authorize @booking
     @job.booked = true
     if @booking.save && @job.save
@@ -58,6 +55,12 @@ def update
     render :new
   end
 end
+
+  def mybookings
+
+    @bookings = Booking.where(user_id: current_user.id)
+    authorize @bookings
+  end
 
 
 

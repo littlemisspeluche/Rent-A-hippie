@@ -31,6 +31,10 @@ class BookingPolicy < ApplicationPolicy
   record.user == user
   end
 
+  def mybookings?
+    true
+  end
+
   def confirmed?
     if record.status == "0"
       true
