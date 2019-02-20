@@ -34,10 +34,12 @@
     <div class="links">
       <ul>
         <li class="btn-orange"><%= link_to "Back", jobs_path %></li>
-        <li class="btn-orange"><% if policy(@job).edit? %>
+        <% if policy(@job).edit? %>
+        <li class="btn-orange">
           <%= link_to "Edit Job", edit_job_path(params[:id])%>
           <% end %></li>
-        <li class="btn-orange"> <% if policy(@job).destroy? %>
+          <% if policy(@job).destroy? %>
+        <li class="btn-orange">
         <%= link_to "Delete Job", job_path(), :method =>:delete%>
         <% end  %> </li>
       </ul>
