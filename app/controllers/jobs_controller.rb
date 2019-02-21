@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   def index
     @jobs = policy_scope(Job)
-    @job = @jobs.where("booked = false AND location = ? ", params["format"])
+    @jobb = @jobs.where("booked = false AND location = ? ", params["format"])
     @job = @jobs.last
     @markers = @jobs.map do |job|
       {
@@ -10,7 +10,7 @@ class JobsController < ApplicationController
         lat: job.latitude
       }
     end
-    
+
   end
 
   def show
@@ -38,7 +38,7 @@ class JobsController < ApplicationController
     @job.location = results.first.city + " " +"Boom"
     @job.latitude = results.first.coordinates.first
     @job.longitude =  results.first.coordinates.last
-    
+
     authorize @job
     if @job.save
       redirect_to job_path(@job)
