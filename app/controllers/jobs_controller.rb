@@ -2,11 +2,25 @@ class JobsController < ApplicationController
   def index
     @jobs = policy_scope(Job)
     @job = @jobs.where("booked = false AND location = ? ", params["format"])
+    @job = @jobs.last
+    @markers = @jobs.map do |job|
+      {
 
+        lng: job.longitude,
+        lat: job.latitude
+      }
+    end
+    
   end
 
   def show
     @job = Job.find(params[:id])
+
+    @markers = [{
+        lng: @job.longitude,
+        lat: @job.latitude
+      }]
+
     authorize @job
   end
 
@@ -18,6 +32,13 @@ class JobsController < ApplicationController
   def create
     @job = Job.new(job_params)
     @job.user = current_user
+    #results = Geocoder.search("")
+    results = Geocoder.search("213.30.114.42")
+
+    @job.location = results.first.city + " " +"Boom"
+    @job.latitude = results.first.coordinates.first
+    @job.longitude =  results.first.coordinates.last
+    
     authorize @job
     if @job.save
       redirect_to job_path(@job)
@@ -57,7 +78,6 @@ class JobsController < ApplicationController
   def job_params
     params.require(:job).permit(:description, :location, :cost, :time)
   end
-
 end
 
 
