@@ -1,15 +1,18 @@
 /* Main navbar */
-.navbar {
+.navbar2 {
   padding: 20px 15px 0 15px;
   transition: all 0.3s ease;
 }
 /* Logo */
 .navbar-brand img {
   height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 17px;
 }
 
 /* User Avatar */
-.navbar .avatar {
+.navbar2 .avatar {
   height: 40px;
   width: 40px;
   border-radius: 50%;
@@ -45,13 +48,11 @@
 
 /* Dropdown menu */
 
-
-
 .nav-icon {
   color: white;
   position: absolute;
   top: 17px;
-  left: 242px;
+  right: 10px;
 
 }
 .navbar-dropdown-menu {

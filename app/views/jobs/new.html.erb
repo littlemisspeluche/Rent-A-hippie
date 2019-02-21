@@ -1,12 +1,17 @@
-<div class="new-job">
-<%= simple_form_for [@job] do |job| %>
-  <%= job.error_notification %>
-  <%= job.input :description, label: "Job Description", :label_html=>{:class => 'new-label'} %>
-  <%= job.input :location, collection: ["Burning Man","Ozora","Tomorrowland","Boom"],label: "Current Festval", :label_html=>{:class => 'new-label'} %>
-  <%= job.input :cost, label: "Job cost", :label_html=>{:class => 'new-label'} %>
-  <%= job.input :time, label: "Time to complete the job (Min)",:label_html=>{:class => 'new-label'} %>
-  <%= job.button :submit, class: 'btn-block' %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+      <%= simple_form_for [@job] do |job| %>
+      <div class="new-job">
+        <%= job.error_notification %>
+        <%= job.input :description, label: "Job Description", :label_html=>{:class => 'new-label'} %>
+        <%= job.input :location, collection: ["Burning Man","Ozora","Tomorrowland","Boom"],label: "Current Festval", :label_html=>{:class => 'new-label'} %>
+        <%= job.input :cost, label: "Job cost", :label_html=>{:class => 'new-label'} %>
+        <%= job.input :time, label: "Time to complete the job (Min)",:label_html=>{:class => 'new-label'} %>
+        <%= job.button :submit, class: 'btn-block' %>
+      <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-
 
