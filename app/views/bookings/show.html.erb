@@ -8,7 +8,15 @@
   </div>
     <div class="map-cards">
 
-      <div class="map-b"></div>
+      <div class="map-b">
+          <div
+      id="map"
+      style="width: 100%;
+      height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+       ></div>
+      </div>
       <div class="booking-info">
               <h5>Hippie</h5>
       <div class="booking-info-hippie">
@@ -36,6 +44,6 @@
     <button class="btn-blue">
         <%= link_to "Job Completed!", booking_path(@booking), method: :patch, :class => "btn btn-block" %>
     </button>
+  <% end %>
 
 
-<% end %>

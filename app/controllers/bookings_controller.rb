@@ -5,6 +5,13 @@ end
 
 def show
   @booking = Booking.find(params[:id])
+  
+  @job = Job.find(@booking.job_id)
+
+    @markers = [{
+        lng: @job.longitude,
+        lat: @job.latitude
+      }]
   authorize @booking
 
 end
