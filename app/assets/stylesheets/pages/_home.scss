@@ -33,6 +33,18 @@
   flex-direction: column;
 }
 
+
+.card-location img {
+  -webkit-transform: scale(1.15);
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+}
+
+.card-location img:hover {
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
+}
+
+
 .card-location h3 {
   color: #F8C600;
   font-weight: bolder;
