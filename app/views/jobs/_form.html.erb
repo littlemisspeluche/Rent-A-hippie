@@ -1,10 +1,10 @@
 <%= simple_form_for [@job] do |job| %>
   <%= job.error_notification %>
-  <%= job.input :description, label: "Job Description" %>
-  <%= job.input :location, label: "Job address" %>
-  <%= job.input :cost, label: "Job cost" %>
-  <%= job.input :time, label: "Time to complete the job" %>
-  <%= job.button :submit %>
+  <%= job.input :description, label: "Job Description", :label_html=>{:class => 'new-label'} %>
+  <%= job.input :location, collection: ["Burning Man","Ozora","Tomorrowland","Boom"],label: "Current Festval", :label_html=>{:class => 'new-label'} %>
+  <%= job.input :cost, label: "Job cost", :label_html=>{:class => 'new-label'} %>
+  <%= job.input :time, label: "Time to complete the job", :label_html=>{:class => 'new-label'} %>
+  <%= job.button :submit,  class: 'btn-block'%>
 <% end %>
 
 
