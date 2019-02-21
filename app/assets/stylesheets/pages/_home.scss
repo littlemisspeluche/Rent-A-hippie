@@ -19,7 +19,7 @@
   letter-spacing: 2px;
 }
 
-#location {
+.header {
  text-align: center;
  font-size: 20px;
  font-weight: bolder;
@@ -43,6 +43,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 
