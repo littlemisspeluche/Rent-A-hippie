@@ -3,28 +3,24 @@
 
   <a href="/" class="navbar-brand">
     <img src="images/logo.png" alt="logo">
-
-
   </a>
   <!-- Right Navigation -->
 
   <div class="navbar-right hidden-xs hidden-sm">
     <% if current_user.present? %>
-    <a href="" class="navbar-item navbar-link">Add a Job</a>
+      <%= link_to "Add Job", new_job_path, class: "navbar-item navbar-link" %>
     <a href="" class="navbar-item navbar-link">All Open Jobs Around me</a>
-    <a href="" class="navbar-item navbar-link">Sign Out</a>
     <!-- Profile picture with dropdown list -->
     <div class="navbar-item">
 
       <div class="dropdown">
         <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-          <li><a href="#">My Bookings</a></li>
-          <li><a href="#">My Jobs</a></li>
-          <li><a href="#">Log Out</a></li>
+          <li><%= link_to "My Bookings", mybookings_path %></li>
+          <li><%= link_to "My Jobs", myjobs_path %></li>
+          <li><%= link_to "Log Out", destroy_user_session_path, :method =>:delete %></li>
         </ul>
       </div>
-
      <% else %>
       new_user_session_path
     <% end %>
@@ -36,18 +32,13 @@
     <div class="dropdown">
       <i class="nav-icon fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-        <li><a href="#">Add a Job</a></li>
+        <li><%= link_to "Add Job", new_job_path %></li>
         <li><a href="#">All Open Jobs Around me</a></li>
-        <li><a href="#">My Bookings</a></li>
-        <li><a href="#">My Jobs</a></li>
-        <li><a href="#">Log Out</a></li>
+        <li><%= link_to "My Bookings", mybookings_path %></li>
+        <li><%= link_to "My Jobs", myjobs_path %></li>
+        <li><%= link_to "Log Out", destroy_user_session_path, :method =>:delete %>/li>
       </ul>
     </div>
   </div>
-    <% else %>
-    <a href="" class="navbar-item navbar-link">All Open Jobs Around me</a>
-    <a href="" class="navbar-item navbar-link">Sign in</a>
-    <a href="" class="navbar-item navbar-link">Sign up</a>
-    <% end %>
 </div>
-<%end %>
+
