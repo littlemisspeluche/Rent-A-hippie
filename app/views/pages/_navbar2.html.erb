@@ -6,6 +6,7 @@
   <!-- Right Navigation -->
   <div class="navbar-right hidden-xs hidden-sm">
     <% if current_user.present? %>
+    <a href="" class="navbar-item navbar-link">Add a Job</a>
     <a href="" class="navbar-item navbar-link">All Open Jobs Around me</a>
     <a href="" class="navbar-item navbar-link">Sign Out</a>
     <!-- Profile picture with dropdown list -->
@@ -25,6 +26,8 @@
     <div class="dropdown">
       <i class="nav-icon fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+        <li><a href="#">Add a Job</a></li>
+        <li><a href="#">All Open Jobs Around me</a></li>
         <li><a href="#">My Bookings</a></li>
         <li><a href="#">My Jobs</a></li>
         <li><a href="#">Log Out</a></li>
