@@ -1,6 +1,8 @@
 
+<div class="background-img" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(<%= image_path 'boom.jpg' %>);">
+
 <div class="row">
- <div class="col-lg-offset-3 col-lg-6 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12"">
+ <div class="col-lg-offset-3 col-lg-6 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12>
   <div class="title">
     <h1>Available jobs </h1>
    </div>
@@ -12,40 +14,41 @@
 <% end  %>
 
     <div class="row">
-<% @jobs.each do |job| %>
-    <div class="col-lg-offset-3 col-lg-6 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12"">
+
+<% @job.each do |job| %>
+    <div class="col-lg-offset-3 col-lg-6 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12">
+
 
   <div class="card-jobs ">
-    
+
     <div class="card-jobs-details">
        <div class="card-jobs-detail">
         <h2>Location</h2>
         <p><%=job.location%></p>
         </div>
          <div class="card-jobs-detail">
-          <h2>Cost</h2>
-          <p><%=job.cost%></p>
+          <h2>Will Pay</h2>
+          <p><%=job.cost%> $</p>
          </div>
             <div class="card-jobs-detail">
-              <h2>Time</h2>
-              <p><%=job.time%></p>
+              <h2>Will Wait</h2>
+              <p><%=job.time%> Minutes</p>
             </div>
             <div class="card-jobs-infos">
               <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-jobs-user avatar-bordered"/>
               <p id="image-name"><%=job.user.first_name%></p>
             </div>
-    </div>  
+    </div>
       <div class="card-jobs-description">
         <h2>Description</h2>
         <p><%=link_to  job.description, job_path(job.id)%></p>
      </div>
   </div>
   </div>
-     
 <% end %>
  </div>
  <div class="row">
-  <div class="col-lg-offset-3 col-lg-6 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12"">
+  <div class="col-lg-offset-3 col-lg-6 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12">
    <div class="btnn">
     <button class="btn-orange">
       <%= link_to "Sign Out", destroy_user_session_path, :method =>:delete %>
@@ -57,10 +60,4 @@
  </div>
 </div>
 
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
+
