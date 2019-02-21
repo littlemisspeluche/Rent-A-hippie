@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
-    <img src="images/logo.png" alt="logo">
+    <img src="/images/logo.png" alt="logo">
   </a>
 
   <!-- Right Navigation -->
@@ -13,7 +13,7 @@
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
-    <% if current_user.present? %>
+  <% if current_user.present? %>
       <div class="dropdown">
         <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -22,9 +22,9 @@
           <li><a href="#">Log Out</a></li>
         </ul>
       </div>
-      <%# else %>
-<!--       loggin button
- -->    <%# end %>
+     <% else %>
+      new_user_session_path
+    <% end %>
     </div>
   </div>
   <!-- Dropdown appearing on mobile only -->
