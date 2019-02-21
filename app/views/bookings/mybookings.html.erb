@@ -9,9 +9,9 @@
 <div class="card-product">
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
   <div class="card-product-infos">
-    <h2><%=booking.job.user.email%></h2>
+    <h2><%=booking.job.user.first_name%> will wait <%= booking.job.time %> Minutes </h2>
     <p><%= link_to booking.job.description, booking_path(booking.id) %> </p>
-    <p><%= booking.job.time %> Minutes</p>
+    <p><%= booking.job.location %> Festival</p>
   </div>
 </div>
 <% end %>

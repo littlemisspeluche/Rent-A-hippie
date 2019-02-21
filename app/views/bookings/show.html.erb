@@ -1,5 +1,6 @@
 <div class="purple-background">
   <div class="row">
+
     <p class="title">You Booked The Job</p>
      <% unless @booking.status == "0" %>
     <h4 class="status-booking"> <%= @booking.status %></h4>
@@ -11,17 +12,18 @@
       <div class="booking-info">
               <h5>Hippie</h5>
       <div class="booking-info-hippie">
-      <li><%= @booking.user.first_name.capitalize! %></li>
+
+      <li><%= @booking.user.first_name.capitalize %></li>
       <li><%= @booking.user.phone_number %></li>
-      <li> Booked <%= @booking.created_at.min %> minutes Ago</li>
+
+      <li> Booked at <%= @booking.created_at.hour.to_s + ":" + @booking.created_at.min.to_s%> </li>
       <li> Festival: <%= @booking.job.location %> </li>
       </div>
 
       <h5>Party Boy</h5>
       <div class="booking-info-partyboy">
-      <li><%= @booking.job.user.first_name.capitalize! %></li>
+      <li><%= @booking.job.user.first_name.capitalize %></li>
       <li><%= @booking.job.user.phone_number %></li>
-      <li>Willing to wait <%= @booking.job.time%> Minutes</li>
       <li><%= @booking.job.cost %> $ </li>
       <li><%= @booking.job.description %></li>
       <li> Festival: <%= @booking.job.location %></li>
