@@ -1,8 +1,8 @@
 
 <div class="row">
- <div class="col-lg-offset-2 col-lg-6 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12"">
+ <div class="col-lg-offset-3 col-lg-6 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12"">
   <div class="title">
-    <h1>The jobs of my boys</h1>
+    <h1>Available jobs </h1>
    </div>
   </div>
 </div>
@@ -11,12 +11,12 @@
 <h4>Sorry, no jobs at the moment!</h4>
 <% end  %>
 
-<% @job.each do |job| %>
     <div class="row">
-    <div class="col-lg-offset-2 col-lg-6 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12"">
+<% @job.each do |job| %>
+    <div class="col-lg-offset-3 col-lg-6 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12"">
 
   <div class="card-jobs ">
-
+    
     <div class="card-jobs-details">
        <div class="card-jobs-detail">
         <h2>Location</h2>
@@ -26,25 +26,33 @@
           <h2>Cost</h2>
           <p><%=job.cost%></p>
          </div>
-           <div class="card-jobs-detail">
-            <h2>Time</h2>
-            <p><%=job.time%></p>
+            <div class="card-jobs-detail">
+              <h2>Time</h2>
+              <p><%=job.time%></p>
             </div>
-             <div class="card-jobs-infos">
-               <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-jobs-user avatar-bordered"/>
-
-                 <p id="image-name" ><%=job.user.first_name%></p>
-             </div>
-
-
-       </div>
-         <div class="card-jobs-description">
-         <h2>Description</h2>
-         <p><%=link_to  job.description, job_path(job.id)%></p>
+            <div class="card-jobs-infos">
+              <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-jobs-user avatar-bordered"/>
+              <p id="image-name"><%=job.user.first_name%></p>
+            </div>
+    </div>  
+      <div class="card-jobs-description">
+        <h2>Description</h2>
+        <p><%=link_to  job.description, job_path(job.id)%></p>
      </div>
-       </div>
-<% end  %>
-<%= link_to "Sign Out", destroy_user_session_path, :method =>:delete %>
-<%= link_to "Add Job", new_job_path %>
-
-
+  </div>
+  </div>
+     
+<% end %>
+ </div>
+ <div class="row">
+  <div class="col-lg-offset-3 col-lg-6 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12"">
+   <div class="btnn">
+    <button class="btn-orange">
+      <%= link_to "Sign Out", destroy_user_session_path, :method =>:delete %>
+    </button>
+    <button class="btn-orange">
+      <%= link_to "Add Job", new_job_path %>
+    </button>
+  </div>
+ </div>
+</div>
