@@ -1,25 +1,39 @@
 <div class="purple-background">
   <div class="row">
     <p class="title">You Booked The Job</p>
+     <% unless @booking.status == "0" %>
+    <h4 class="status-booking"> <%= @booking.status %></h4>
+    <% end %>
   </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-    <ul class="list-description">
-      <% if @booking.status != "0" %>
-      <li>STATUS: <%= @booking.status %></li>
-      <% end %>
-      <li>Hippie Name: <%= @booking.user.first_name %></li>
-      <li>Email: <%= @booking.user.email %></li>
-      <li>Partyboy Name: <%= @booking.job.user.first_name %></li>
-      <li>Email: <%= @booking.job.user.email %></li>
-      <li>Job id: <%= @booking.job.id %></li>
-    </ul>
+    <div class="map-cards">
+
+      <div class="map-b"></div>
+      <div class="booking-info">
+              <h5>Hippie</h5>
+      <div class="booking-info-hippie">
+      <li><%= @booking.user.first_name.capitalize! %></li>
+      <li><%= @booking.user.phone_number %></li>
+      <li> Booked <%= @booking.created_at.min %> minutes Ago</li>
+      <li> Festival: <%= @booking.job.location %> </li>
+      </div>
+
+      <h5>Party Boy</h5>
+      <div class="booking-info-partyboy">
+      <li><%= @booking.job.user.first_name.capitalize! %></li>
+      <li><%= @booking.job.user.phone_number %></li>
+      <li>Willing to wait <%= @booking.job.time%> Minutes</li>
+      <li><%= @booking.job.cost %> $ </li>
+      <li><%= @booking.job.description %></li>
+      <li> Festival: <%= @booking.job.location %></li>
+      </div>
+      </div>
+    </div>
 
      <% if policy(@booking).confirmed? %>
      <p style="font-size: 16; color: #E3D888">Please click below to confirm </p>
     <button class="btn-blue">
-        <%= link_to "Has Arrived!", booking_path(@booking), method: :patch %>
+        <%= link_to "Job Completed!", booking_path(@booking), method: :patch, :class => "btn btn-block" %>
     </button>
-    
-    
+
+
 <% end %>
