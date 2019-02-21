@@ -5,7 +5,7 @@ end
 
 def show
   @booking = Booking.find(params[:id])
-  
+
   @job = Job.find(@booking.job_id)
 
     @markers = [{
@@ -45,7 +45,7 @@ def update
   job = Booking.find(params[:id])
   @booking = Booking.find(params[:id])
   authorize @booking
-  @booking.status == "0" ? @booking.status = "Pending" : @booking.status = "Approved"
+  @booking.status == "0" ? @booking.status = "Approved" : @booking.status = "Approved"
    if @booking.status == "Approved"
     current_user.confirmed = false
     @booking.job.user.confirmed = false
