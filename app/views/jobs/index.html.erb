@@ -1,4 +1,51 @@
 
+<div class="background-img" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(<%= image_path 'boom.jpg' %>);">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="title">
+        <h2>Jobs available around me</h2>
+      </div>
+    </div>
+  </div>
+  <% if @job.length == 0 %>
+  <h4>Sorry, no jobs at the moment!</h4>
+  <% end  %>
+
+  <% @job.each do |job| %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="card-jobs">
+        <div class="card-jobs-details">
+          <div class="card-jobs-detail">
+            <h2>Location</h2>
+            <p><%=job.location%></p>
+          </div>
+          <div class="card-jobs-detail">
+            <h2>Cost</h2>
+            <p><%=job.cost%></p>
+          </div>
+          <div class="card-jobs-detail">
+            <h2>Time</h2>
+            <p><%=job.time%></p>
+          </div>
+          <div class="card-jobs-infos">
+            <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-jobs-user avatar-bordered"/>
+            <p id="image-name" ><%=job.user.first_name%></p>
+          </div>
+        </div>
+        <div class="card-jobs-description">
+          <h2>Description</h2>
+          <p><%=link_to  job.description, job_path(job.id)%></p>
+        </div>
+      </div>
+  <% end  %>
+  <%= link_to "Sign Out", destroy_user_session_path, :method =>:delete %>
+  <%= link_to "Add Job", new_job_path %>
+</div>
+
+
+=======
+
 <div class="row">
  <div class="col-lg-offset-3 col-lg-6 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12"">
   <div class="title">
@@ -56,3 +103,4 @@
   </div>
  </div>
 </div>
+
